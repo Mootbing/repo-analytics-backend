@@ -17,6 +17,7 @@ export function generateSVG({
     title,
     titleColor,
     numFiles,
+    numErrors,
     totalLines,
     textColor,
     ...props
@@ -30,7 +31,7 @@ export function generateSVG({
         <g>
           <text x="20" y="35" style="font-size: 24px; font-weight: 500; fill: ${titleColor};">${title}</text>
           <text x="20" y="60" style="font-size: 14px; fill: ${textColor}; font-weight: 500;">
-            ${numFiles} Files | ${totalLines} Lines
+            ${numFiles} Files | ${totalLines} Lines | ${numErrors} Unanalyzed
           </text>
 
           <text x="20" y="90" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Languages Breakdown</text>
