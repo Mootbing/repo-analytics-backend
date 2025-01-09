@@ -26,15 +26,16 @@ export function generateSVG({
       <svg width="467" height="195" xmlns="http://www.w3.org/2000/svg">
         <rect width="467" height="195" fill="${backgroundColor}" />
         <title>${title}</title>
-        <desc></desc>
+        <desc>Repository Analyzer</desc>
         <g>
-          <text x="20" y="35" font-size="20" font-weight="300" fill="${titleColor}">${title}</text>
-          <text x="20" y="60" font-size="14" fill="${textColor}" font-weight="500">Files: ${numFiles}</text>
-          <text x="${60 + numFiles.length * 7.5}" y="60" font-size="14" fill="${textColor}" font-weight="500">
-            Total Lines: ${totalLines}
+          <text x="20" y="35" style="font-size: 24px; font-weight: 500; fill: ${titleColor};">${title}</text>
+          <text x="20" y="60" style="font-size: 14px; fill: ${textColor}; font-weight: 500;">
+            ${numFiles} Files | ${totalLines} Lines
           </text>
+
+          <text x="20" y="90" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Languages Breakdown</text>
+          <text x="20" y="130" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Files</text>
         </g>
       </svg>
     `;
   }
-  
