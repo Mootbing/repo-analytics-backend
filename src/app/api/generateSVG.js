@@ -14,6 +14,7 @@ export function beautifyNumberString(num) {
 
 export function generateSVG({
     backgroundColor,
+    subHeader,
     title,
     titleColor,
     numFiles,
@@ -29,13 +30,14 @@ export function generateSVG({
         <title>${title}</title>
         <desc>Repository Analyzer</desc>
         <g>
-          <text x="20" y="35" style="font-size: 24px; font-weight: 500; fill: ${titleColor};">${title}</text>
-          <text x="20" y="60" style="font-size: 14px; fill: ${textColor}; font-weight: 500;">
+          <text x="20" y="25" style="font-size: 12px; font-weight: 500; fill: ${textColor};">${subHeader}</text>
+          <text x="20" y="45" style="font-size: 24px; font-weight: 500; fill: ${titleColor};">${title}</text>
+          <text x="20" y="70" style="font-size: 14px; fill: ${textColor}; font-weight: 500;">
             ${numFiles} Files | ${totalLines} Lines | ${numErrors} Unanalyzed
           </text>
 
-          <text x="20" y="90" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Languages Breakdown</text>
-          <text x="20" y="130" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Files</text>
+          <text x="20" y="100" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Languages Breakdown</text>
+          <text x="20" y="140" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Files</text>
         </g>
       </svg>
     `;
