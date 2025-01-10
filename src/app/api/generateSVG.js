@@ -31,7 +31,7 @@ export function generateSVG({
         <desc>Repository Analyzer</desc>
         <g>
           <text x="20" y="25" style="font-size: 12px; font-weight: 500; fill: ${textColor};">${subHeader}</text>
-          <text x="20" y="45" style="font-size: 24px; font-weight: 500; fill: ${titleColor};">${title}</text>
+          <text x="20" y="50" style="font-size: 24px; font-weight: 500; fill: ${titleColor};">${title}</text>
           <text x="20" y="70" style="font-size: 14px; fill: ${textColor}; font-weight: 500;">
             ${numFiles} Files | ${totalLines} Lines | ${numErrors} Unanalyzed
           </text>

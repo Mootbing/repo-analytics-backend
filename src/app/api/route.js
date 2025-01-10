@@ -10,7 +10,7 @@ export async function GET(request) {
   const numFiles = beautifyNumberString(searchParams.get("numFiles") || "1000");
   const totalLines = beautifyNumberString(searchParams.get("totalLines") || "0");
   const numErrors = beautifyNumberString(searchParams.get("errors") || "0");
-  const textColor = searchParams.get("textColor") || "white";
+  const textColor = searchParams.get("textColor") || "rgba(255, 255, 255, 0.7)";
 
   const svgMarkup = generateSVG({
     backgroundColor,
