@@ -27,7 +27,7 @@ export function generateSVG({
     ...props
   }) {
 
-    const height = 195 //100 + (extensions.length * 20) + 20;
+    const height = 100 + (extensions.length * 20) + 20; //195
 
     // Generate the SVG as a string
     return `
