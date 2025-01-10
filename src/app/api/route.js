@@ -12,6 +12,12 @@ export async function GET(request) {
   const numErrors = beautifyNumberString(searchParams.get("errors") || "0");
   const textColor = searchParams.get("textColor") || "rgba(255, 255, 255, 0.7)";
 
+  const lineCounterPerFile = searchParams.get("lineCounterPerFile") || "0";
+  const fileCounter = searchParams.get("fileCounter") || "0";
+
+  console.log("lineCounterPerFile", lineCounterPerFile);
+  console.log("fileCounter", fileCounter);
+
   const svgMarkup = generateSVG({
     backgroundColor,
     subHeader,

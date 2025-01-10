@@ -25,8 +25,8 @@ export function generateSVG({
   }) {
     // Generate the SVG as a string
     return `
-      <svg width="467" height="195" xmlns="http://www.w3.org/2000/svg">
-        <rect width="467" height="195" fill="${backgroundColor}" />
+      <svg width="467" height="500" xmlns="http://www.w3.org/2000/svg">
+        <rect width="467" height="500" fill="${backgroundColor}" />
         <title>${title}</title>
         <desc>Repository Analyzer</desc>
         <g>
