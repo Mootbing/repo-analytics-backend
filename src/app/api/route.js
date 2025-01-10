@@ -12,11 +12,11 @@ export async function GET(request) {
   const numErrors = beautifyNumberString(searchParams.get("errors") || "0");
   const textColor = searchParams.get("textColor") || "rgba(255, 255, 255, 0.7)";
 
-  const lineCounterPerFile = searchParams.get("lineCounterPerFile") || "0";
-  const fileCounter = searchParams.get("fileCounter") || "0";
+  const lineCounterPerFile = decodeURIComponent(searchParams.get("lineCounterPerFile")).split(",") || [];
+  const fileCounter = decodeURIComponent(searchParams.get("fileCounter")).split(",") || [];
+  const extensions = decodeURIComponent(searchParams.get("extensions")).split(",") || [];
 
-  console.log("lineCounterPerFile", lineCounterPerFile);
-  console.log("fileCounter", fileCounter);
+  console.log(extensions)
 
   const svgMarkup = generateSVG({
     backgroundColor,
@@ -26,7 +26,10 @@ export async function GET(request) {
     numFiles,
     totalLines,
     textColor,
-    numErrors
+    numErrors,
+    extensions,
+    lineCounterPerFile,
+    fileCounter,
   });
 
   return new NextResponse(svgMarkup, {

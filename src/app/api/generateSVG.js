@@ -21,12 +21,18 @@ export function generateSVG({
     numErrors,
     totalLines,
     textColor,
+    extensions,
+    lineCounterPerFile,
+    fileCounter,
     ...props
   }) {
+
+    const height = 100 + (extensions.length * 20) + 20;
+
     // Generate the SVG as a string
     return `
-      <svg width="467" height="500" xmlns="http://www.w3.org/2000/svg">
-        <rect width="467" height="500" fill="${backgroundColor}" />
+      <svg width="260" height="${height}" xmlns="http://www.w3.org/2000/svg">
+        <rect width="260" height="${height}" fill="${backgroundColor}" />
         <title>${title}</title>
         <desc>Repository Analyzer</desc>
         <g>
@@ -36,8 +42,26 @@ export function generateSVG({
             ${numFiles} Files | ${totalLines} Lines | ${numErrors} Unanalyzed
           </text>
 
-          <text x="20" y="100" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Languages Breakdown</text>
-          <text x="20" y="140" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Files</text>
+          <text x="20" y="100" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Languages</text>
+          <text x="120" y="100" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Lines</text>
+          <text x="200" y="100" style="font-size: 16px; font-weight: 500; fill: ${titleColor};">Files</text>
+          ${extensions.map((ext, index) => `
+            <text x="20" y="${120 + (index * 20)}" style="font-size: 12px; fill: ${textColor}; font-weight: 500;">
+              .${ext}
+            </text>
+            `).join("")}
+
+          ${lineCounterPerFile.map((lineCounter, index) => `
+            <text x="120" y="${120 + (index * 20)}" style="font-size: 12px; fill: ${textColor}; font-weight: 500;">
+              ${lineCounter}
+            </text>
+            `).join("")}
+
+          ${fileCounter.map((lineCounter, index) => `
+            <text x="200" y="${120 + (index * 20)}" style="font-size: 12px; fill: ${textColor}; font-weight: 500;">
+              ${lineCounter}
+            </text>
+            `).join("")}
         </g>
       </svg>
     `;
