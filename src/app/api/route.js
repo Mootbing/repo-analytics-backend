@@ -14,6 +14,7 @@ export async function GET(request) {
 
   const svgMarkup = generateSVG({
     backgroundColor,
+    subHeader,
     title,
     titleColor,
     numFiles,
