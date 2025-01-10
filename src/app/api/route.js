@@ -16,8 +16,6 @@ export async function GET(request) {
   const fileCounter = decodeURIComponent(searchParams.get("fileCounter")).split(",") || [];
   const extensions = decodeURIComponent(searchParams.get("extensions")).split(",") || [];
 
-  console.log(extensions)
-
   const svgMarkup = generateSVG({
     backgroundColor,
     subHeader,

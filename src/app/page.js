@@ -1,11 +1,6 @@
 "use client";
 
 export default function Home() {
-
-  // const { searchParams } = new URL(window.location.href);
-  // console.log("fileCounter")
-  // console.log(decodeURIComponent(searchParams.get("fileCounter")))
-
   return (
     <main style={{ padding: "1rem" }}>
       <img
